@@ -1,3 +1,4 @@
-Questo programma in python serve per copiare i file da una cartella di orgine ad una cartella di destinazione. 
+Python program that copies files from a source fodler to a destination folder (also checks if the file already exists in the destination folder).
+In order to make the program work, the variables for the source and destination folders have to be changed with the correct paths.
 
-Creato per fare backup su hard disk esterni in maniera veloce.
+Written with python v 3.10.
