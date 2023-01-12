@@ -2,3 +2,5 @@ Python program that copies files from a source fodler to a destination folder (a
 In order to make the program work, the variables for the source and destination folders have to be changed with the correct paths.
 
 Written with python v 3.10.
+
+Some errors have to be fixed. For example files that already exists in the destination sub-folder make to crash.
