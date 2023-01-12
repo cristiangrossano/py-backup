@@ -6,19 +6,19 @@ local_folder = "./TestA"
 destination_folder = "./TestB"
 count = 0
 
-print("Copying files from " + local_folder + " to " + destination_folder)
+print(f"Copying files from {local_folder}  to  {destination_folder}")
 
-local_files = os.listdir(local_folder)
-
-for file_name in local_files:
-    local_file = os.path.join(local_folder, file_name)
-    destination_file = os.path.join(destination_folder, file_name)
-    if os.path.isdir(local_file):
-        shutil.copytree(local_file, destination_file)
-    else:
+for subdir, dirs, files in os.walk(local_folder):
+    subdir_name = os.path.relpath(subdir, local_folder)
+    destination_subdir = os.path.join(destination_folder, subdir_name)
+    if not os.path.exists(destination_subdir):
+        os.makedirs(destination_subdir)
+    for file_name in files:
+        local_file = os.path.join(subdir, file_name)
+        destination_file = os.path.join(destination_subdir, file_name)
         if not os.path.exists(destination_file):
-            shutil.copy2(local_file, destination_folder)
+            shutil.copy2(local_file, destination_subdir)
             count = count + 1
 
 print("Completed!")
-print(str(count) + " files was successfully copied.")
+print(f"{count} files was successfully copied.")
