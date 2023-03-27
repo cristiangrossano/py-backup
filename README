@@ -1,4 +1,4 @@
-Python program that copies files from a source fodler to a destination folder (also checks if the file already exists in the destination folder).
+Python program that copies files from a source folder to a destination folder (also checks if the file already exists in the destination folder).
 In order to make the program work, the variables for the source and destination folders have to be changed with the correct paths.
 
 Written with python v 3.10.
